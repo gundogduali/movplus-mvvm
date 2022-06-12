@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:movplus_mvvm/ui/theme/app_colors.dart';
 
+import 'app_colors.dart';
 import 'app_text_theme.dart';
 
 final appThemeModeProvider =
@@ -25,12 +25,10 @@ final appThemeProvider = Provider<AppTheme>(
 class AppTheme {
   final ThemeMode mode;
   final ThemeData data;
-  final AppTextTheme textTheme;
 
   AppTheme({
     required this.mode,
     required this.data,
-    required this.textTheme,
   });
 
   factory AppTheme.light() {
@@ -38,19 +36,29 @@ class AppTheme {
     final themeData = ThemeData.light().copyWith(
       textTheme: ThemeData.light().textTheme,
     );
-    return AppTheme(mode: mode, data: themeData, textTheme: AppTextTheme());
+    return AppTheme(mode: mode, data: themeData);
   }
 
   factory AppTheme.dark() {
     const mode = ThemeMode.dark;
     final themeData = ThemeData.dark().copyWith(
-      textTheme: ThemeData.light().textTheme,
-      scaffoldBackgroundColor: AppColors.cinder,
-      colorScheme: const ColorScheme.dark(
-        primary: AppColors.alizarinCrimson,
-        background: AppColors.cinder,
-      ),
-    );
-    return AppTheme(mode: mode, data: themeData, textTheme: AppTextTheme());
+        textTheme: AppTextTheme().textTheme,
+        scaffoldBackgroundColor: AppColors.cinder,
+        colorScheme: const ColorScheme.dark(
+          primary: AppColors.alizarinCrimson,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: AppColors.ebonyClay,
+          selectedItemColor: AppColors.alizarinCrimson,
+          selectedIconTheme: const IconThemeData(
+            size: 24,
+          ),
+          unselectedIconTheme: const IconThemeData(
+            size: 24,
+          ),
+          selectedLabelStyle: AppTextTheme().textTheme.caption,
+          unselectedLabelStyle: AppTextTheme().textTheme.caption,
+        ));
+    return AppTheme(mode: mode, data: themeData);
   }
 }

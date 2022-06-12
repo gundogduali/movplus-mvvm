@@ -49,7 +49,7 @@ class AppTextTheme {
           letterSpacing: 0,
         ),
         caption: _interTextTheme.caption!.copyWith(
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w500,
           fontSize: FontSize.pt10,
           letterSpacing: 0,
         ),

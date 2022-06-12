@@ -11,4 +11,5 @@ class AppColors {
   static const Color santasGray = Color(0xff9F9FA2);
   static const Color white = Color(0xffFFFFFF);
   static const Color cinder = Color(0xff0F1016);
+  static const Color ebonyClay = Color(0xff1D1F2D);
 }
