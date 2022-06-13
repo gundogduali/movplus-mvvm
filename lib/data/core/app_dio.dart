@@ -1,7 +1,6 @@
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:ua_client_hints/ua_client_hints.dart';
 
 import 'api_constants.dart';
 
@@ -19,12 +18,12 @@ class AppDio with DioMixin implements Dio {
 
     this.options = options;
 
-    interceptors.add(InterceptorsWrapper(onRequest: (options, handler) async {
-      options.headers.addAll(await userAgentClientHintsHeader());
-      handler.next(options);
-    }));
+    /// interceptors.add(InterceptorsWrapper(onRequest: (options, handler) async {
+    ///   options.headers.addAll(await userAgentClientHintsHeader());
+    ///   handler.next(options);
+    /// }));
 
-    interceptors.add(LogInterceptor(responseBody: true, requestBody: true));
+    /// interceptors.add(LogInterceptor(responseBody: true, requestBody: true));
 
     httpClientAdapter = DefaultHttpClientAdapter();
   }

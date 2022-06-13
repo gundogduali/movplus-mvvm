@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/extensions/size_extensions.dart';
 import '../../../../common/screenutil/screenutil.dart';
 import '../../../../data/model/movie/movie_model.dart';
+import '../../../route/app_router.gr.dart';
 import 'animated_movie_carousel_card_widget.dart';
 
 class MovieCarouselPageView extends StatefulWidget {
@@ -38,6 +40,7 @@ class _MovieCarouselPageViewState extends State<MovieCarouselPageView> {
             index: index,
             movieId: movie.id,
             posterPath: movie.posterPath,
+            onTap: () => context.router.push(MovieDetailScreen(movie: movie)),
           );
         },
         pageSnapping: true,

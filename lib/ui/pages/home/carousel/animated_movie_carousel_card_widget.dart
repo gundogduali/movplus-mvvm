@@ -9,13 +9,14 @@ class AnimatedMovieCardWidget extends StatelessWidget {
   final int movieId;
   final String posterPath;
   final PageController pageController;
+  final Function() onTap;
 
   const AnimatedMovieCardWidget({
     Key? key,
     required this.index,
     required this.movieId,
     required this.posterPath,
-    required this.pageController,
+    required this.pageController, required this.onTap,
   }) : super(key: key);
 
   @override
@@ -54,6 +55,7 @@ class AnimatedMovieCardWidget extends StatelessWidget {
       child: MovieCarouselCardWidget(
         movieId: movieId,
         posterPath: posterPath,
+        onTap: onTap,
       ),
     );
   }

@@ -7,10 +7,11 @@ import '../../../../data/core/api_constants.dart';
 
 class MovieCarouselCardWidget extends StatelessWidget {
   const MovieCarouselCardWidget(
-      {Key? key, required this.movieId, required this.posterPath})
+      {Key? key, required this.movieId, required this.posterPath, required this.onTap})
       : super(key: key);
   final int movieId;
   final String posterPath;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +21,7 @@ class MovieCarouselCardWidget extends StatelessWidget {
         elevation: 32,
         borderRadius: BorderRadius.circular(16.w),
         child: InkWell(
-          onTap: () => context.router.push(
-            MovieDetailScreen(movieId: movieId),
-          ),
+          onTap: onTap,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16.w),
             child: Image.network(

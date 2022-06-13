@@ -12,6 +12,7 @@
 
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
+import 'package:movplus_mvvm/data/model/movie/movie_model.dart' as _i7;
 import 'package:movplus_mvvm/ui/pages/detail/movie_detail_screen.dart' as _i2;
 import 'package:movplus_mvvm/ui/pages/home/home_screen.dart' as _i3;
 import 'package:movplus_mvvm/ui/pages/root/root_screen.dart' as _i1;
@@ -31,7 +32,7 @@ class AppRouter extends _i5.RootStackRouter {
       final args = routeData.argsAs<MovieDetailScreenArgs>();
       return _i5.AdaptivePage<dynamic>(
           routeData: routeData,
-          child: _i2.MovieDetailScreen(key: args.key, movieId: args.movieId));
+          child: _i2.MovieDetailScreen(key: args.key, movie: args.movie));
     },
     HomeScreen.name: (routeData) {
       return _i5.AdaptivePage<dynamic>(
@@ -67,24 +68,24 @@ class RootScreen extends _i5.PageRouteInfo<void> {
 /// generated route for
 /// [_i2.MovieDetailScreen]
 class MovieDetailScreen extends _i5.PageRouteInfo<MovieDetailScreenArgs> {
-  MovieDetailScreen({_i6.Key? key, required int movieId})
+  MovieDetailScreen({_i6.Key? key, required _i7.MovieModel? movie})
       : super(MovieDetailScreen.name,
             path: '/detail',
-            args: MovieDetailScreenArgs(key: key, movieId: movieId));
+            args: MovieDetailScreenArgs(key: key, movie: movie));
 
   static const String name = 'MovieDetailScreen';
 }
 
 class MovieDetailScreenArgs {
-  const MovieDetailScreenArgs({this.key, required this.movieId});
+  const MovieDetailScreenArgs({this.key, required this.movie});
 
   final _i6.Key? key;
 
-  final int movieId;
+  final _i7.MovieModel? movie;
 
   @override
   String toString() {
-    return 'MovieDetailScreenArgs{key: $key, movieId: $movieId}';
+    return 'MovieDetailScreenArgs{key: $key, movie: $movie}';
   }
 }
 

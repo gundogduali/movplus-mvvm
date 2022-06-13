@@ -1,0 +1,16 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'video_model.freezed.dart';
+part 'video_model.g.dart';
+
+@freezed
+class VideoModel with _$VideoModel {
+  factory VideoModel({
+    required String id,
+    required String? name,
+    required String key,
+  }) = _VideoModel;
+
+  factory VideoModel.fromJson(Map<String, dynamic> json) =>
+      _$VideoModelFromJson(json);
+}

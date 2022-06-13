@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../data/model/movie/movie_model.dart';
@@ -13,8 +13,14 @@ final futurePopularMoviesProvider = FutureProvider(
 final futureUpcomingMoviesProvider = FutureProvider(
     (ref) => ref.read(moviesViewModelProvider).fetchUpcomingMovies());
 
-final futureMoviesProvider =FutureProvider(
-    (ref) => ref.read(moviesViewModelProvider).fetchMovies());
+final futureMoviesProvider =
+    FutureProvider((ref) => ref.read(moviesViewModelProvider).fetchMovies());
+
+final futureNowPlayingMoviesProvider = FutureProvider(
+    (ref) => ref.read(moviesViewModelProvider).fetchNowPlayingMovies());
+
+final futureTopRatedMoviesProvider = FutureProvider(
+    (ref) => ref.read(moviesViewModelProvider).fetchTopRatedMovies());
 
 class MoviesViewModel extends ChangeNotifier {
   MoviesViewModel(this._reader);
@@ -48,5 +54,13 @@ class MoviesViewModel extends ChangeNotifier {
 
   Future<List<MovieModel>> fetchUpcomingMovies() async {
     return await _movieRepository.getUpcomingMovies();
+  }
+
+  Future<List<MovieModel>> fetchNowPlayingMovies() async {
+    return await _movieRepository.getNowPlayingMovies();
+  }
+
+  Future<List<MovieModel>> fetchTopRatedMovies() async {
+    return await _movieRepository.getTopRatedMovies();
   }
 }

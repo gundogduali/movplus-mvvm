@@ -12,11 +12,6 @@ class HomeMenu extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         HomeMenuCard(
-          image: Assets.svgs.icMovie,
-          title: 'Movie',
-          onTap: () {},
-        ),
-        HomeMenuCard(
           image: Assets.svgs.icSeries,
           title: 'Series',
           onTap: () {},
