@@ -4,6 +4,7 @@ extension StringExtension on String {
   }
 
   String dateSubstring() {
+    if (length < 4) return this;
     return substring(0, 4);
   }
 }

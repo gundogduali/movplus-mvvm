@@ -8,10 +8,14 @@ class CastGridView extends StatelessWidget {
   const CastGridView({Key? key, required this.cast}) : super(key: key);
   final List<CastModel> cast;
 
+  double sizeHeight() {
+    return (cast.length / 2).round() * 48.h;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200.h,
+      height: sizeHeight(),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -20,7 +24,7 @@ class CastGridView extends StatelessWidget {
           childAspectRatio: 0.7,
         ),
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 9,
+        itemCount: cast.length,
         itemBuilder: (BuildContext context, int index) {
           return CastCard(cast: cast[index]);
         },

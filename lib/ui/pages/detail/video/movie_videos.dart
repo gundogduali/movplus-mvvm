@@ -16,7 +16,7 @@ class MovieVideos extends StatefulWidget {
 
 class _MovieVideosState extends State<MovieVideos> {
   double sizeHeight() {
-    return (widget.videos.length / 2).round() * 75.h;
+    return (widget.videos.length / 2).round() * 90.h;
   }
 
   @override

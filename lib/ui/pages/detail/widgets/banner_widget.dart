@@ -7,6 +7,7 @@ import '../../../../common/extensions/size_extensions.dart';
 import '../../../../common/extensions/string_extensions.dart';
 import '../../../../common/screenutil/screenutil.dart';
 import '../../../../data/model/movie/movie_model.dart';
+import '../../../component/movie_appbar.dart';
 import '../../../component/transparent_button.dart';
 import '../../../component/vote_average_widget.dart';
 import '../../../theme/app_colors.dart';
@@ -33,13 +34,10 @@ class BannerWidget extends ConsumerWidget {
       child: Stack(
         children: [
           BannerImage(imagePath: movie?.posterPath),
-          Padding(
-            padding: EdgeInsets.all(16.w),
-            child: IconButton(
+          MovieAppBar(
+            leading: IconButton(
               onPressed: () => context.router.pop(),
-              icon: const Icon(
-                IconlyLight.arrow_left,
-              ),
+              icon: const Icon(IconlyLight.arrow_left),
             ),
           ),
           Positioned(
