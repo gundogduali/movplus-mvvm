@@ -12,4 +12,6 @@ abstract class MovieRepository {
   Future<List<CastModel>> getCast(
       {required int movieId});
   Future<List<VideoModel>> getVideos({required int movieId});
+  Future<List<MovieModel>> searchMovies({required String query,required int page});
+  Future<List<MovieModel>> getMoviesbyGenre({required int genreId,required int page});
 }

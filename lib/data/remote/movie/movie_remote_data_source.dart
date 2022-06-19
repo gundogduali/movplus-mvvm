@@ -52,4 +52,19 @@ abstract class MovieRemoteDataSource {
     @Path('movie_id') required int movieId,
     @Query('api_key') required String apiKey,
   });
+
+  @GET('search/movie')
+  Future<MoviesResponseModel> searchMovies({
+    @Query('api_key') required String apiKey,
+    @Query('query') required String query,
+    @Query('page') required int page,
+    @Query('include_adult') bool includeAdult = true,
+  });
+
+  @GET('discover/movie')
+  Future<MoviesResponseModel> getMoviesbyGenre({
+    @Query('api_key') required String apiKey,
+    @Query('with_genres') required int genreId,
+    @Query('page') required int page,
+  });
 }

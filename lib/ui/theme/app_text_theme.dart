@@ -50,7 +50,7 @@ class AppTextTheme {
         ),
         caption: _interTextTheme.caption!.copyWith(
           fontWeight: FontWeight.w500,
-          fontSize: FontSize.pt12,
+          fontSize: FontSize.pt10,
           letterSpacing: 0,
         ),
         button: _interTextTheme.button!.copyWith(

@@ -71,4 +71,26 @@ class MovieRepositoryImpl implements MovieRepository {
     );
     return response.results;
   }
+
+  @override
+  Future<List<MovieModel>> searchMovies(
+      {required String query, required int page}) async {
+    final response = await _movieRemoteDataSource.searchMovies(
+      query: query,
+      apiKey: ApiConstants.apiKey,
+      page: page,
+    );
+    return response.results;
+  }
+
+  @override
+  Future<List<MovieModel>> getMoviesbyGenre(
+      {required int genreId, required int page}) async {
+    final response = await _movieRemoteDataSource.getMoviesbyGenre(
+      genreId: genreId,
+      apiKey: ApiConstants.apiKey,
+      page: page,
+    );
+    return response.results;
+  }
 }

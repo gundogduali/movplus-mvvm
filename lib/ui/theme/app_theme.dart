@@ -58,6 +58,15 @@ class AppTheme {
           ),
           selectedLabelStyle: AppTextTheme().textTheme.caption,
           unselectedLabelStyle: AppTextTheme().textTheme.caption,
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.white),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.white),
+          ),
+          isCollapsed: true,
         ));
     return AppTheme(mode: mode, data: themeData);
   }
