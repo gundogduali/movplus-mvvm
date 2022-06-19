@@ -14,8 +14,27 @@ import 'package:flutter/services.dart';
 class $AssetsPngsGen {
   const $AssetsPngsGen();
 
+  /// File path: assets/pngs/action.png
+  AssetGenImage get action => const AssetGenImage('assets/pngs/action.png');
+
+  /// File path: assets/pngs/adventure.png
+  AssetGenImage get adventure =>
+      const AssetGenImage('assets/pngs/adventure.png');
+
+  /// File path: assets/pngs/comedy.png
+  AssetGenImage get comedy => const AssetGenImage('assets/pngs/comedy.png');
+
+  /// File path: assets/pngs/drama.png
+  AssetGenImage get drama => const AssetGenImage('assets/pngs/drama.png');
+
+  /// File path: assets/pngs/fantasy.png
+  AssetGenImage get fantasy => const AssetGenImage('assets/pngs/fantasy.png');
+
   /// File path: assets/pngs/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/pngs/logo.png');
+
+  /// File path: assets/pngs/romance.png
+  AssetGenImage get romance => const AssetGenImage('assets/pngs/romance.png');
 }
 
 class $AssetsSvgsGen {

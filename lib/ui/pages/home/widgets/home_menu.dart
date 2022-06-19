@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../gen/assets.gen.dart';
@@ -12,14 +13,16 @@ class HomeMenu extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         HomeMenuCard(
+          radius: 28,
           image: Assets.svgs.icSeries,
           title: 'Series',
           onTap: () {},
         ),
         HomeMenuCard(
+          radius: 28,
           image: Assets.svgs.icCategory,
           title: 'Genre',
-          onTap: () {},
+          onTap: () => context.router.pushNamed('/genre'),
         ),
       ],
     );
