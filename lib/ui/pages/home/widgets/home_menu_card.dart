@@ -15,7 +15,7 @@ class HomeMenuCard extends StatelessWidget {
 
   final String title;
   final SvgGenImage image;
-  final Function() onTap;
+  final Function()? onTap;
   final int radius;
 
   @override

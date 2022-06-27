@@ -28,8 +28,11 @@ mixin _$MovieModel {
   double? get voteAverage => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   double? get popularity => throw _privateConstructorUsedError;
-  @JsonKey(name: 'poster_path')
-  String get posterPath => throw _privateConstructorUsedError;
+  @JsonKey(
+      name: 'poster_path',
+      defaultValue:
+          'https://www.dentanice.com.tr/wp-content/uploads/2016/10/orionthemes-placeholder-image.png')
+  String? get posterPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'original_language')
   String? get originalLanguage => throw _privateConstructorUsedError;
   @JsonKey(name: 'original_title')
@@ -55,20 +58,31 @@ abstract class $MovieModelCopyWith<$Res> {
           MovieModel value, $Res Function(MovieModel) then) =
       _$MovieModelCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'vote_count') int? voteCount,
+      {@JsonKey(name: 'vote_count')
+          int? voteCount,
       int id,
       bool video,
-      @JsonKey(name: 'vote_average') double? voteAverage,
+      @JsonKey(name: 'vote_average')
+          double? voteAverage,
       String title,
       double? popularity,
-      @JsonKey(name: 'poster_path') String posterPath,
-      @JsonKey(name: 'original_language') String? originalLanguage,
-      @JsonKey(name: 'original_title') String? originalTitle,
-      @JsonKey(name: 'genre_ids') List<int>? genreIds,
-      @JsonKey(name: 'backdrop_path') String? backdropPath,
+      @JsonKey(
+          name: 'poster_path',
+          defaultValue:
+              'https://www.dentanice.com.tr/wp-content/uploads/2016/10/orionthemes-placeholder-image.png')
+          String? posterPath,
+      @JsonKey(name: 'original_language')
+          String? originalLanguage,
+      @JsonKey(name: 'original_title')
+          String? originalTitle,
+      @JsonKey(name: 'genre_ids')
+          List<int>? genreIds,
+      @JsonKey(name: 'backdrop_path')
+          String? backdropPath,
       bool? adult,
       String? overview,
-      @JsonKey(name: 'release_date') String? releaseDate});
+      @JsonKey(name: 'release_date')
+          String? releaseDate});
 }
 
 /// @nodoc
@@ -124,7 +138,7 @@ class _$MovieModelCopyWithImpl<$Res> implements $MovieModelCopyWith<$Res> {
       posterPath: posterPath == freezed
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       originalLanguage: originalLanguage == freezed
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
@@ -165,20 +179,31 @@ abstract class _$$_MovieModelCopyWith<$Res>
       __$$_MovieModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'vote_count') int? voteCount,
+      {@JsonKey(name: 'vote_count')
+          int? voteCount,
       int id,
       bool video,
-      @JsonKey(name: 'vote_average') double? voteAverage,
+      @JsonKey(name: 'vote_average')
+          double? voteAverage,
       String title,
       double? popularity,
-      @JsonKey(name: 'poster_path') String posterPath,
-      @JsonKey(name: 'original_language') String? originalLanguage,
-      @JsonKey(name: 'original_title') String? originalTitle,
-      @JsonKey(name: 'genre_ids') List<int>? genreIds,
-      @JsonKey(name: 'backdrop_path') String? backdropPath,
+      @JsonKey(
+          name: 'poster_path',
+          defaultValue:
+              'https://www.dentanice.com.tr/wp-content/uploads/2016/10/orionthemes-placeholder-image.png')
+          String? posterPath,
+      @JsonKey(name: 'original_language')
+          String? originalLanguage,
+      @JsonKey(name: 'original_title')
+          String? originalTitle,
+      @JsonKey(name: 'genre_ids')
+          List<int>? genreIds,
+      @JsonKey(name: 'backdrop_path')
+          String? backdropPath,
       bool? adult,
       String? overview,
-      @JsonKey(name: 'release_date') String? releaseDate});
+      @JsonKey(name: 'release_date')
+          String? releaseDate});
 }
 
 /// @nodoc
@@ -236,7 +261,7 @@ class __$$_MovieModelCopyWithImpl<$Res> extends _$MovieModelCopyWithImpl<$Res>
       posterPath: posterPath == freezed
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       originalLanguage: originalLanguage == freezed
           ? _value.originalLanguage
           : originalLanguage // ignore: cast_nullable_to_non_nullable
@@ -273,20 +298,31 @@ class __$$_MovieModelCopyWithImpl<$Res> extends _$MovieModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MovieModel implements _MovieModel {
   _$_MovieModel(
-      {@JsonKey(name: 'vote_count') this.voteCount,
+      {@JsonKey(name: 'vote_count')
+          this.voteCount,
       required this.id,
       this.video = false,
-      @JsonKey(name: 'vote_average') this.voteAverage,
+      @JsonKey(name: 'vote_average')
+          this.voteAverage,
       required this.title,
       this.popularity,
-      @JsonKey(name: 'poster_path') required this.posterPath,
-      @JsonKey(name: 'original_language') this.originalLanguage,
-      @JsonKey(name: 'original_title') this.originalTitle,
-      @JsonKey(name: 'genre_ids') final List<int>? genreIds,
-      @JsonKey(name: 'backdrop_path') this.backdropPath,
+      @JsonKey(
+          name: 'poster_path',
+          defaultValue:
+              'https://www.dentanice.com.tr/wp-content/uploads/2016/10/orionthemes-placeholder-image.png')
+          this.posterPath,
+      @JsonKey(name: 'original_language')
+          this.originalLanguage,
+      @JsonKey(name: 'original_title')
+          this.originalTitle,
+      @JsonKey(name: 'genre_ids')
+          final List<int>? genreIds,
+      @JsonKey(name: 'backdrop_path')
+          this.backdropPath,
       this.adult,
       this.overview,
-      @JsonKey(name: 'release_date') this.releaseDate})
+      @JsonKey(name: 'release_date')
+          this.releaseDate})
       : _genreIds = genreIds;
 
   factory _$_MovieModel.fromJson(Map<String, dynamic> json) =>
@@ -308,8 +344,11 @@ class _$_MovieModel implements _MovieModel {
   @override
   final double? popularity;
   @override
-  @JsonKey(name: 'poster_path')
-  final String posterPath;
+  @JsonKey(
+      name: 'poster_path',
+      defaultValue:
+          'https://www.dentanice.com.tr/wp-content/uploads/2016/10/orionthemes-placeholder-image.png')
+  final String? posterPath;
   @override
   @JsonKey(name: 'original_language')
   final String? originalLanguage;
@@ -402,21 +441,31 @@ class _$_MovieModel implements _MovieModel {
 
 abstract class _MovieModel implements MovieModel {
   factory _MovieModel(
-          {@JsonKey(name: 'vote_count') final int? voteCount,
-          required final int id,
-          final bool video,
-          @JsonKey(name: 'vote_average') final double? voteAverage,
-          required final String title,
-          final double? popularity,
-          @JsonKey(name: 'poster_path') required final String posterPath,
-          @JsonKey(name: 'original_language') final String? originalLanguage,
-          @JsonKey(name: 'original_title') final String? originalTitle,
-          @JsonKey(name: 'genre_ids') final List<int>? genreIds,
-          @JsonKey(name: 'backdrop_path') final String? backdropPath,
-          final bool? adult,
-          final String? overview,
-          @JsonKey(name: 'release_date') final String? releaseDate}) =
-      _$_MovieModel;
+      {@JsonKey(name: 'vote_count')
+          final int? voteCount,
+      required final int id,
+      final bool video,
+      @JsonKey(name: 'vote_average')
+          final double? voteAverage,
+      required final String title,
+      final double? popularity,
+      @JsonKey(
+          name: 'poster_path',
+          defaultValue:
+              'https://www.dentanice.com.tr/wp-content/uploads/2016/10/orionthemes-placeholder-image.png')
+          final String? posterPath,
+      @JsonKey(name: 'original_language')
+          final String? originalLanguage,
+      @JsonKey(name: 'original_title')
+          final String? originalTitle,
+      @JsonKey(name: 'genre_ids')
+          final List<int>? genreIds,
+      @JsonKey(name: 'backdrop_path')
+          final String? backdropPath,
+      final bool? adult,
+      final String? overview,
+      @JsonKey(name: 'release_date')
+          final String? releaseDate}) = _$_MovieModel;
 
   factory _MovieModel.fromJson(Map<String, dynamic> json) =
       _$_MovieModel.fromJson;
@@ -436,8 +485,11 @@ abstract class _MovieModel implements MovieModel {
   @override
   double? get popularity => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'poster_path')
-  String get posterPath => throw _privateConstructorUsedError;
+  @JsonKey(
+      name: 'poster_path',
+      defaultValue:
+          'https://www.dentanice.com.tr/wp-content/uploads/2016/10/orionthemes-placeholder-image.png')
+  String? get posterPath => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'original_language')
   String? get originalLanguage => throw _privateConstructorUsedError;

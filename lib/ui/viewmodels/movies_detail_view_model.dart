@@ -44,7 +44,11 @@ class MoviesDetailViewModel extends ChangeNotifier {
     for (var element in genreIds) {
       genreText += "${MovieGenres().listOfGenres[element]}, ";
     }
-    return genreText.substring(0, genreText.length - 2);
+
+    if (genreText.length > 3) {
+      return genreText.substring(0, genreText.length - 2);
+    }
+    return genreText;
   }
 
   Future<List<CastModel>> fetchCast({required int movieId}) async {

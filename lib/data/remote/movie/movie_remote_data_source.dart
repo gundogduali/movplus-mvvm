@@ -58,7 +58,7 @@ abstract class MovieRemoteDataSource {
     @Query('api_key') required String apiKey,
     @Query('query') required String query,
     @Query('page') required int page,
-    @Query('include_adult') bool includeAdult = true,
+    @Query('include_adult') bool includeAdult = false,
   });
 
   @GET('discover/movie')

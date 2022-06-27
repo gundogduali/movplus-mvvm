@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movplus_mvvm/ui/theme/app_colors.dart';
 
 import '../../../../common/screenutil/screenutil.dart';
 import '../../../../data/core/api_constants.dart';
@@ -27,6 +28,11 @@ class BannerImage extends StatelessWidget {
         fit: BoxFit.cover,
         height: ScreenUtil.screenHeight * 0.61,
         width: ScreenUtil.screenWidth,
+        errorBuilder: (context, obj, trace) {
+          return const Placeholder(
+            color: AppColors.white,
+          );
+        },
       ),
     );
   }

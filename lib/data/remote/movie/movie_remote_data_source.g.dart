@@ -134,7 +134,7 @@ class _MovieRemoteDataSource implements MovieRemoteDataSource {
       {required apiKey,
       required query,
       required page,
-      includeAdult = true}) async {
+      includeAdult = false}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'api_key': apiKey,

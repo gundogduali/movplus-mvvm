@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:movplus_mvvm/common/extensions/size_extensions.dart';
-import 'package:movplus_mvvm/data/model/movie/movie_model.dart';
-import 'package:movplus_mvvm/ui/pages/detail/tab/detail_tabbed_widget.dart';
-import 'package:movplus_mvvm/ui/pages/detail/widgets/banner_widget.dart';
-import 'package:movplus_mvvm/ui/theme/app_colors.dart';
+
+import '../../../common/extensions/size_extensions.dart';
+import '../../../data/model/movie/movie_model.dart';
+import '../../theme/app_colors.dart';
+import 'tab/detail_tabbed_widget.dart';
+import 'widgets/banner_widget.dart';
 
 class MovieDetailScreen extends StatelessWidget {
   const MovieDetailScreen({Key? key, required this.movie}) : super(key: key);
@@ -16,7 +17,7 @@ class MovieDetailScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             BannerWidget(
-              movie: movie,
+              movie: movie!,
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 24.w, horizontal: 16.w),

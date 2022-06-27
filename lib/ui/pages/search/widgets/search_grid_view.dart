@@ -58,32 +58,32 @@ class SearchGridView extends ConsumerWidget {
 
   Center _movieNotFound(BuildContext context) {
     return Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            HomeMenuCard(
-              title: '',
-              image: Assets.svgs.icMovie,
-              onTap: () {},
-              radius: 44,
-            ),
-            Text(
-              'Search not found.',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6!
-                  .copyWith(color: AppColors.white),
-            ),
-            SizedBox(height: 4.h),
-            Text(
-              'Please search for other keywords.',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText2!
-                  .copyWith(color: AppColors.white),
-            ),
-          ],
-        ),
-      );
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          HomeMenuCard(
+            title: '',
+            image: Assets.svgs.icMovie,
+            onTap: null,
+            radius: 44,
+          ),
+          Text(
+            'Search not found.',
+            style: Theme.of(context)
+                .textTheme
+                .headline6!
+                .copyWith(color: AppColors.white),
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            'Please search for other keywords.',
+            style: Theme.of(context)
+                .textTheme
+                .bodyText2!
+                .copyWith(color: AppColors.white),
+          ),
+        ],
+      ),
+    );
   }
 }

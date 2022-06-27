@@ -28,6 +28,11 @@ class MovieCard extends StatelessWidget {
               child: Image.network(
                 '${ApiConstants.baseImageUrl}${_movie.posterPath}',
                 fit: BoxFit.fitHeight,
+                errorBuilder: (context, obj, trace) {
+                  return const Placeholder(
+                    color: AppColors.alizarinCrimson,
+                  );
+                },
               ),
             ),
           ),
@@ -59,6 +64,7 @@ class MovieCard extends StatelessWidget {
               ),
               VoteAverageWidget(
                   voteAverage: _movie.voteAverage ?? 0,
+                  iconSize: 8,
                   textStyle: Theme.of(context)
                       .textTheme
                       .caption!

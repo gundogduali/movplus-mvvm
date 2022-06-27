@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movplus_mvvm/ui/component/vote_average_widget.dart';
 
 import '../../../../common/extensions/size_extensions.dart';
 import '../../../../common/extensions/string_extensions.dart';
+import '../../../component/vote_average_widget.dart';
 import '../../../theme/app_colors.dart';
 
 class MovieListCard extends StatelessWidget {
@@ -66,6 +66,7 @@ class MovieListCard extends StatelessWidget {
                   SizedBox(width: 110.w),
                   VoteAverageWidget(
                     voteAverage: voteAverage,
+                    iconSize: 8,
                     textStyle: Theme.of(context)
                         .textTheme
                         .caption!

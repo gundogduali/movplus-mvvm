@@ -1,10 +1,13 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../core/api_constants.dart';
+import '../../local/movie_local_data_source.dart';
+import '../../local/movie_local_data_source_impl.dart';
 import '../../model/movie/cast_model.dart';
 import '../../model/movie/movie_model.dart';
 import '../../model/video/video_model.dart';
 import '../../remote/movie/movie_remote_data_source.dart';
+import '../../tables/movie_table.dart';
 import 'movie_repository.dart';
 
 final movieRepositoryProvider =
@@ -17,6 +20,9 @@ class MovieRepositoryImpl implements MovieRepository {
 
   late final MovieRemoteDataSource _movieRemoteDataSource =
       _reader(movieRemoteDataSourceProvider);
+
+  late final MovieLocalDataSource _movieLocalDataSource =
+      _reader(movieLocalDataSourceProvider);
 
   @override
   Future<List<MovieModel>> getTrendingMovies() async {
@@ -92,5 +98,44 @@ class MovieRepositoryImpl implements MovieRepository {
       page: page,
     );
     return response.results;
+  }
+
+  @override
+  Future<bool> checkIfMovieFavorite(int movieId) async {
+    try {
+      return await _movieLocalDataSource.checkIfMovieFavorite(movieId);
+    } catch (e) {
+      print(e);
+      return Future.value(false);
+    }
+  }
+
+  @override
+  Future<void> deleteMovie(int movieId) async {
+    try {
+      final response = await _movieLocalDataSource.deleteMovie(movieId);
+      return response;
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  Future<List<MovieTable>> getAllMovies() async {
+    try {
+      final response = await _movieLocalDataSource.getAllMovies();
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> saveMovie(MovieModel movie) async {
+    try {
+      final response = await _movieLocalDataSource
+          .saveMovie(MovieTable.fromMovieModel(movie));
+      return response;
+    } catch (e) {}
   }
 }

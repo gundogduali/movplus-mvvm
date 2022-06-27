@@ -39,7 +39,7 @@ class _MovieCarouselPageViewState extends State<MovieCarouselPageView> {
             pageController: widget.pageController,
             index: index,
             movieId: movie.id,
-            posterPath: movie.posterPath,
+            posterPath: movie.posterPath ?? '',
             onTap: () => context.router.push(MovieDetailScreen(movie: movie)),
           );
         },
